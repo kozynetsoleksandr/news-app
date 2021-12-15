@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NoveltyController;
 use App\Http\Controllers\RubricController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/rubrics', [RubricController::class, 'index']);
+Route::get('/novelty', [NoveltyController::class, 'index']);
