@@ -12,8 +12,10 @@ class Rubric extends Model
     protected $guarded = [];
 
     public function subrubric(){
-
         return $this->hasMany(Rubric::class, 'parent_id');
-
+    }
+    public function rubrics()
+    {
+        return $this->belongsToMany(Novelty::class);
     }
 }

@@ -13,4 +13,9 @@ class Novelty extends Model
     {
         return $this->hasOne(User::class);
     }
+    public function rubrics()
+    {
+        return $this->belongsToMany(Rubric::class);
+    }
+
 }
