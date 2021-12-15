@@ -13,3 +13,13 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+/.phpstorm.meta.php
+/_ide_helper.php
+/_ide_helper_models.php
+/temp/2021_12_15_073431_create_categories_table.php
+/temp/CategoryFactory.php
+/temp/categoryTreeview.blade.php
+/temp/DatabaseSeeder.php
+/temp/Rubric.php
+/temp/RubricController.php
+/temp/subCategoryList.blade.php
