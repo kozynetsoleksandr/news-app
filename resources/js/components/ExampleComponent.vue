@@ -1,23 +1,34 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div>
+        <vue-tree-navigation :items="items" />
     </div>
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+import VueTreeNavigation from 'vue-tree-navigation';
+export default {
+    data() {
+        return {
+            items: null
+        };
+    },
+    mounted() {
+        axios.get('/api/rubrics')
+            .then(response => {
+                this.items = response.data.data;
+            }).then(() => {
+            const {res} = this.items.reduce((acc,curr)=>{
+                if(acc.parentMap[curr.parentId]){
+                    (acc.parentMap[curr.parentId].children =
+                        acc.parentMap[curr.parentId].children || []).push(curr);
+                } else {
+                    acc.res.push(curr);
+                }
+                acc.parentMap[curr.id] = curr;
+                return acc;
+            }, {parentMap: {}, res: []});
+            this.items = res;
+        })
     }
+}
 </script>
