@@ -21,6 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //Route::get('/rubrics', [RubricController::class, 'index']);
-Route::get('/novelty', [NoveltyController::class, 'index']);
+Route::apiResource('/novelty', \App\Http\Controllers\Api\NoveltyController::class);
 
 Route::apiResource('/rubrics', \App\Http\Controllers\Api\RubricController::class);

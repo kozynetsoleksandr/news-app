@@ -17,5 +17,4 @@ class Novelty extends Model
     {
         return $this->belongsToMany(Rubric::class);
     }
-
 }

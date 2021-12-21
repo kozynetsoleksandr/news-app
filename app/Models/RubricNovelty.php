@@ -9,5 +9,5 @@ class RubricNovelty extends Model
 {
     use HasFactory;
 
-    protected $table = 'rubric_novelty';
+    protected $table = 'novelty_rubric';
 }

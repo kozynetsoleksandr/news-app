@@ -4,8 +4,9 @@ namespace App\Http\Resources;
 
 use App\Models\Rubric;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\RubricResource;
 
-class RubricResource extends JsonResource
+class NoveltyResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,11 +16,11 @@ class RubricResource extends JsonResource
      */
     public function toArray($request)
     {
+
         return [
-            'id' => $this->id,
-            'name' => $this->title,
-            'parentId' => $this->parent_id,
-            'path' => $this->id
+            'title' => $this->title,
+            'text' => $this->text,
+            'rubric' => RubricResource::collection($this->rubrics),
         ];
     }
 }

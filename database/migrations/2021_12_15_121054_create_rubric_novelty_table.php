@@ -13,7 +13,7 @@ class CreateRubricNoveltyTable extends Migration
      */
     public function up()
     {
-        Schema::create('rubric_novelty', function (Blueprint $table) {
+        Schema::create('novelty_rubric', function (Blueprint $table) {
             $table->id();
             $table->foreignId('rubric_id')->constrained();
             $table->foreignId('novelty_id')->constrained();

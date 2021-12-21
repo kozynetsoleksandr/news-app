@@ -3,15 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
+        <title>News paper</title>
         <link rel="stylesheet" href="{{mix('css/app.css')}}">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body class="antialiased">
         <div id="app">
-            <example-component></example-component>
+            <app></app>
         </div>
         <script src="{{ mix('/js/app.js') }}"></script>
-
     </body>
 </html>

@@ -23,3 +23,5 @@ yarn-error.log
 /temp/Rubric.php
 /temp/RubricController.php
 /temp/subCategoryList.blade.php
+/temp/NoveltyResource.php
+/temp/NoveltyController.php
